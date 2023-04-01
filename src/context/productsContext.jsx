@@ -10,6 +10,9 @@ export const JobProvider = ({ children }) => {
   const [cartProducts, setCartProducts] = useState([])
   const [page, setPage] = useState(0)
   const [itemsPerPage, setItemsPerPage] = useState(10)
+  const [showCart, setShowCart] = useState(false)
+  const [sort, setSort] = useState("")
+  const [nameSearch, setNameSearch] = useState("")
 
   useEffect(() => {
     const cart = localStorage.getItem("@CART")
@@ -31,12 +34,14 @@ export const JobProvider = ({ children }) => {
       const category = selectedCategory;
       const limit = Number(itemsPerPage)
       const skip = +page * +limit
-      console.log(page, limit, skip)
+      const name = nameSearch
       const { data } = await api.get(`/products`, {
         params: {
           category,
           limit,
-          skip
+          skip, 
+          sort, 
+          name
         },
       });
       setProducts(data);
@@ -51,11 +56,12 @@ export const JobProvider = ({ children }) => {
 
   useEffect(() => {
     getProducts();
-  }, [selectedCategory, itemsPerPage, page]);
+    console.log(sort)
+  }, [selectedCategory, itemsPerPage, page, sort, nameSearch]);
 
   return (
     <ProductsContext.Provider
-      value={{ categories, setSelectedCategory, products, cartProducts, setCartProducts, selectedCategory, page, setPage, itemsPerPage, setItemsPerPage }}
+      value={{ categories, setSelectedCategory, products, cartProducts, setCartProducts, selectedCategory, page, setPage, itemsPerPage, setItemsPerPage,showCart, setShowCart, sort, setSort, nameSearch, setNameSearch }}
     >
       {children}
     </ProductsContext.Provider>

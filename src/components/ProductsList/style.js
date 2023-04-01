@@ -12,11 +12,17 @@ export const ProductListStyle = styled.ul`
     padding-right: 5%;
     display: flex;
     justify-content: space-between;
+    width: 70%;
 
+    .selectsProducts {
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+    }
     select {
-        width: 150px;
-        padding: 5px 10px;
-        border-radius: 8px;
+      width: 100px;
+      padding: 5px 10px;
+      border-radius: 8px;
     }
   }
 
@@ -34,6 +40,8 @@ export const ProductListStyle = styled.ul`
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: space-between;
+      height: 100%;
       width: 150px;
       gap: 1rem;
       cursor: pointer;
@@ -101,18 +109,19 @@ export const ProductListStyle = styled.ul`
 
           :hover {
             transition: 700ms;
-            background-color: #566EF7;
+            background-color: #566ef7;
           }
         }
       }
     }
   }
 
+  
   @media screen and (min-width: 768px) {
-    max-width: 1500px;
-    margin: 0 auto;
-    h3 {
-      padding-left: 5%;
+      max-width: 1500px;
+      margin: 0 auto;
+      h3 {
+          padding-left: 5%;
     }
     .liProducts {
       li {
@@ -123,6 +132,14 @@ export const ProductListStyle = styled.ul`
       overflow: none;
       flex-wrap: wrap;
       justify-content: center;
+    }
+    .selectsProducts {
+      gap: 2rem;
+      max-width: 50%;
+    
+      select {
+          width: 100px;
+      }
     }
   }
 `;

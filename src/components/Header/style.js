@@ -17,21 +17,49 @@ export const HeaderStyle = styled.header`
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items:center;
+    gap: 1rem;
 
-    input {
-      width: 80%;
-      padding: 15px 25px;
-      border-radius: 15px;
-      border: none;
+    form {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      height: 50px;
+
+      input {
+        width: 70%;
+        padding: 15px 25px;
+        border-radius: 15px 0 0 15px;
+        border: none;
+      }
+
+        button {
+            width: 15%;
+            height: 100%;
+            cursor: pointer;
+            border: none;
+            border-radius: 0px 15px 15px 0;
+      }
     }
-
+    
     .basketButton {
-      display: none;
+      display: block;
+      font-size: 34px;
+      color: white;
     }
-
     .cartHeader {
-      display: none;
-    }
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+
+        p {
+          color: white;
+          font-size: 22px;
+        }
+      }
   }
 
   @media screen and (min-width: 768px) {
@@ -40,7 +68,7 @@ export const HeaderStyle = styled.header`
     justify-content: space-between;
 
     .rightHeader {
-      display: flex;
+      flex-direction: row;
       gap: 2rem;
       width: 40%;
       align-items: center;
@@ -49,24 +77,7 @@ export const HeaderStyle = styled.header`
         width: 400px;
       }
 
-      .basketButton {
-        display: block;
-        font-size: 34px;
-        color: white;
-      }
-      .cartHeader {
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
-    
-        p {
-          color: white;
-          font-size: 22px;
-        }
-      }
+      
     }
   }
-
 `;

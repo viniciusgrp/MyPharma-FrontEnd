@@ -3,7 +3,7 @@ import { ProductListStyle } from "./style";
 import { ProductsContext } from "../../context/productsContext";
 
 export const ProductsList = () => {
-  const { products, selectedCategory, setCartProducts, cartProducts, setItemsPerPage } =
+  const { products, selectedCategory, setCartProducts, cartProducts, setItemsPerPage, setSort } =
     useContext(ProductsContext);
 
   useEffect(() => {
@@ -14,6 +14,7 @@ export const ProductsList = () => {
     <ProductListStyle>
       <div className="upperUlProducts">
               <h3>{selectedCategory?.toUpperCase() || "Produtos"}</h3>
+              <div className="selectsProducts">
               <select onChange={(e) => setItemsPerPage(+e.target.value)} name="productsPerPage" id="productsPerPage">
                   <option value="10" selected disabled hidden>Itens por página</option>
                   <option value="10">10</option>
@@ -22,6 +23,14 @@ export const ProductsList = () => {
                   <option value="40">40</option>
                   <option value="50">50</option>
               </select>
+              <select onChange={(e) => setSort(e.target.value)} name="orderBy" id="orderBy">
+                <option selected hidden disabled value="">Ordenar por</option>
+                <option value="price">Preço crescente</option>
+                <option value="-price">Preço decrescente</option>
+                <option value="name">Nome A-Z</option>
+                <option value="-name">Nome Z-A</option>
+              </select>
+              </div>
       </div>
       <div className="liProducts">
         {products?.map((product) => (
