@@ -28,6 +28,10 @@ export const HeaderStyle = styled.header`
     .basketButton {
       display: none;
     }
+
+    .cartHeader {
+      display: none;
+    }
   }
 
   @media screen and (min-width: 768px) {
@@ -50,6 +54,19 @@ export const HeaderStyle = styled.header`
         font-size: 34px;
         color: white;
       }
+      .cartHeader {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    
+        p {
+          color: white;
+          font-size: 22px;
+        }
+      }
     }
   }
+
 `;
