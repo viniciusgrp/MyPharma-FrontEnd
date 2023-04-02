@@ -92,6 +92,7 @@ padding: 2rem;
     }
 
     .productInfos {
+        width: 50%;
         span {
         right: -50px;
     }

@@ -15,9 +15,9 @@ export const ProductListStyle = styled.ul`
     width: 70%;
 
     .selectsProducts {
-        width: 50%;
-        display: flex;
-        justify-content: space-between;
+      width: 50%;
+      display: flex;
+      justify-content: space-between;
     }
     select {
       width: 100px;
@@ -116,12 +116,11 @@ export const ProductListStyle = styled.ul`
     }
   }
 
-  
   @media screen and (min-width: 768px) {
-      max-width: 1500px;
-      margin: 0 auto;
-      h3 {
-          padding-left: 5%;
+    max-width: 1500px;
+    margin: 0 auto;
+    h3 {
+      padding-left: 5%;
     }
     .liProducts {
       li {
@@ -133,12 +132,17 @@ export const ProductListStyle = styled.ul`
       flex-wrap: wrap;
       justify-content: center;
     }
-    .selectsProducts {
-      gap: 2rem;
-      max-width: 50%;
-    
-      select {
-          width: 100px;
+    .upperUlProducts {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      .selectsProducts {
+        gap: 2rem;
+        max-width: 30%;
+
+        select {
+          width: 200px;
+        }
       }
     }
   }
