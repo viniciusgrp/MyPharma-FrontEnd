@@ -13,6 +13,7 @@ padding-top: 2rem;
         background-color: blue;
         color: white;
         border: none;
+        cursor: pointer;
     }
 
     @media screen and (min-width: 920px){

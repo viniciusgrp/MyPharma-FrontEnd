@@ -4,8 +4,8 @@ export const CartStyle = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: 98.9vw;
-  max-width:100vw;
+  width: 100%;
+  /* max-width:100vw; */
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 10;

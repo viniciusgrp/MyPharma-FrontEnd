@@ -1,14 +1,12 @@
 import { useContext, useEffect } from "react";
 import { ProductListStyle } from "./style";
 import { ProductsContext } from "../../context/productsContext";
+import { useNavigate } from "react-router-dom";
 
 export const ProductsList = () => {
-  const { products, selectedCategory, setCartProducts, cartProducts, setItemsPerPage, setSort } =
+  const { products, selectedCategory, setCartProducts, cartProducts, setItemsPerPage, setSort, setProductId } =
     useContext(ProductsContext);
-
-  useEffect(() => {
-    console.log(selectedCategory);
-  }, [selectedCategory]);
+  const navigate = useNavigate()
 
   return (
     <ProductListStyle>
@@ -33,8 +31,10 @@ export const ProductsList = () => {
               </div>
       </div>
       <div className="liProducts">
-        {products?.map((product) => (
-          <li>
+        {products?.length && products?.map((product) => (
+          <li onClick={() => {
+            setProductId(product._id)
+            navigate('/product')}}>
             <div className="productImg">
               <img src={product.img} alt="" />
             </div>
@@ -43,13 +43,13 @@ export const ProductsList = () => {
               {product.discont ? (
                 <>
                   <p className="oldPrice">
-                    {product.price.toLocaleString("pt-br", {
+                    {product.price?.toLocaleString("pt-br", {
                       style: "currency",
                       currency: "BRL",
                     })}
                   </p>
                   <span>
-                    {product.discontPrice.toLocaleString("pt-br", {
+                    {product.discontPrice?.toLocaleString("pt-br", {
                       style: "currency",
                       currency: "BRL",
                     })}
@@ -57,7 +57,7 @@ export const ProductsList = () => {
                 </>
               ) : (
                 <p>
-                  {product.price.toLocaleString("pt-br", {
+                  {product.price?.toLocaleString("pt-br", {
                     style: "currency",
                     currency: "BRL",
                   })}

@@ -11,6 +11,7 @@ export const HeaderStyle = styled.header`
 
   .logoHeader {
     max-width: 200px;
+    cursor: pointer;
   }
 
   .rightHeader {

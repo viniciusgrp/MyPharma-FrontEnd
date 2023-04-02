@@ -4,9 +4,10 @@ import { BsBasket } from "react-icons/bs";
 import { useContext, useEffect, useState } from "react";
 import { ProductsContext } from "../../context/productsContext";
 import { AiOutlineSearch } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
-  const { cartProducts, setShowCart, setNameSearch } = useContext(ProductsContext);
+  const { cartProducts, setShowCart, setNameSearch, resetFilters } = useContext(ProductsContext);
 
   const [productsInCart, setProductsInCart] = useState(0);
   const [input, setInput] = useState("")
@@ -17,15 +18,19 @@ export const Header = () => {
 
   useEffect(() => {
     if (cartProducts) {
-      console.log(cartProducts);
       const total = cartProducts.reduce((acc, act) => acc + act.quantity, 0);
       setProductsInCart(total);
     }
   }, [cartProducts]);
 
+  const navigate = useNavigate()
+
   return (
     <HeaderStyle>
-      <img className="logoHeader" src={Logo} alt="Logo do mercado" />
+      <img onClick={() => {
+        resetFilters()
+        navigate("/")
+      }} className="logoHeader" src={Logo} alt="Logo do mercado" />
       <div className="rightHeader">
         <form onSubmit={(e) => {
             e.preventDefault()

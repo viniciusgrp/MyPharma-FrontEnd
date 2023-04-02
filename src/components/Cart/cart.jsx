@@ -9,14 +9,23 @@ export const Cart = () => {
     const [total, setTotal] = useState(0)
 
   useEffect(() => {
-    if (cartProducts){
-        const total = cartProducts.reduce((acc, act) => acc + (act.price * act.quantity),0)
+    if (cartProducts) {
+      const total = cartProducts.reduce((acc, act) => {
+        if (act.discont) {
+            return acc + (act.discontPrice * act.quantity)
+        } else {
+          return acc + (act.price * act.quantity)
+          }
+      }, 0)
         setTotal(total)
     }
   }, [cartProducts]);
 
   return (
-    <CartStyle>
+    <CartStyle id="outsideCart" onClick={(e) => {
+      const outsideCart = document.getElementById("outsideCart")
+      if (e.target === outsideCart) setShowCart(false)
+    }}>
       <div className="cart">
         <div className="headerCart">
           <button className="btnCloseModal" onClick={() => setShowCart(false)}>X</button>
@@ -26,7 +35,13 @@ export const Cart = () => {
           {cartProducts ? (
             <ul className="cartWithProducts">
               {cartProducts.map((product) => {
-                const totalPriceProduct = product.quantity * product.price
+                const funcPrice = () => {if (product.discont) {
+                  return product.discontPrice * product.quantity
+              } else {
+                return product.price * product.quantity
+                }
+                }
+                const totalPriceProduct = funcPrice()
                 if (product.quantity == 0) return;
                 return (
                   <li>
@@ -72,7 +87,7 @@ export const Cart = () => {
                             copy.splice(productIndex, 1)
                             setCartProducts([...copy]);
                             localStorage.setItem("@CART", JSON.stringify(copy));
-                          }}>Remover</button>
+                          }}>Remover Todos</button>
                     </div>
                   </li>
                 );

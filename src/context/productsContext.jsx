@@ -13,13 +13,23 @@ export const JobProvider = ({ children }) => {
   const [showCart, setShowCart] = useState(false)
   const [sort, setSort] = useState("")
   const [nameSearch, setNameSearch] = useState("")
+  const [productId, setProductId] = useState("")
 
   useEffect(() => {
     const cart = localStorage.getItem("@CART")
     if (cart) {
       setCartProducts(JSON.parse(cart))
     }
-  },[])
+  }, [])
+  
+  const resetFilters = () => {
+    setSelectedCategory("")
+    setPage(0)
+    setItemsPerPage(10)
+    setShowCart(false)
+    setSort("")
+    setNameSearch("")
+  }
 
   const getCategories = async () => {
     try {
@@ -55,13 +65,12 @@ export const JobProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    getProducts();
-    console.log(sort)
+    getProducts(); 
   }, [selectedCategory, itemsPerPage, page, sort, nameSearch]);
 
   return (
     <ProductsContext.Provider
-      value={{ categories, setSelectedCategory, products, cartProducts, setCartProducts, selectedCategory, page, setPage, itemsPerPage, setItemsPerPage,showCart, setShowCart, sort, setSort, nameSearch, setNameSearch }}
+      value={{ categories, setSelectedCategory, products, cartProducts, setCartProducts, selectedCategory, page, setPage, itemsPerPage, setItemsPerPage,showCart, setShowCart, sort, setSort, nameSearch, setNameSearch, productId, setProductId, resetFilters }}
     >
       {children}
     </ProductsContext.Provider>
