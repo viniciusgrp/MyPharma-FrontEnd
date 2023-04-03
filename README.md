@@ -19,19 +19,17 @@ Após seguir TODOS os passos do README do back end:
 1 - Abra o terminal e instale as dependencias, rode o seguinte comando:
 yarn install
 
-2 - Execute o servidor rodando o seguinte comando no terminal:
+2 - Vá em src/services/api.js e comente a linha 5 e descomente a 4, se necessário ajuste a porta para a qual a API está rodando localmente.
+
+3 - Execute o servidor rodando o seguinte comando no terminal:
 yarn dev
 
-3 - Se tudo estiver certo aparecerá algo similar no terminal:
+4 - Se tudo estiver certo aparecerá algo similar no terminal:
 ➜  Local:   http://127.0.0.1:5173/
 ➜  Network: use --host to expose
 ➜  press h to show help
 
 Segure CTRL e clique com o botão esquerdo do mouse em http://127.0.0.1:5173/ (ou similar)
-
-====== IMPORTANTE! ======
-
-Caso as categorias e os produtos não apareçam siga o passo Nº presente no README do repositório back end.
 
 ====================== Informações ======================
 
@@ -45,6 +43,7 @@ Ordenação por nome ou preço;
 Paginação;
 Seleção de quantidade de produtos por página;
 Carrinho com opções de aumentar e diminuir a quantidade de produtos;
+Carrinho armazenado no localstorage, assim mesmo que o usuario saia / feche o site, ao retornar os produtos ainda permanecerão no carrinho;
 
 Observações extras:
 
