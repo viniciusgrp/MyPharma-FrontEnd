@@ -39,7 +39,7 @@ export const Header = () => {
           <input
             type="text"
             placeholder="Busque por um produto"
-            onChange={(e) => setInput(e.target.value)}
+            onChange={(e) => setInput(e.target.value.toUpperCase())}
           />
           <button type="submit">
             <AiOutlineSearch />
