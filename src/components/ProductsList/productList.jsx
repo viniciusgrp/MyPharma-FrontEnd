@@ -68,17 +68,17 @@ export const ProductsList = () => {
                 {product.discont ? (
                   <>
                     <p className="oldPrice">
-                      {product.price?.toLocaleString("pt-br", {
-                        style: "currency",
-                        currency: "BRL",
-                      })}
-                    </p>
-                    <span>
                       {product.discontPrice?.toLocaleString("pt-br", {
-                        style: "currency",
-                        currency: "BRL",
-                      })}
-                    </span>
+                          style: "currency",
+                          currency: "BRL",
+                        })}
+                    </p>
+                        <span>
+                          {product.price?.toLocaleString("pt-br", {
+                            style: "currency",
+                            currency: "BRL",
+                          })}
+                        </span>
                   </>
                 ) : (
                   <p>
