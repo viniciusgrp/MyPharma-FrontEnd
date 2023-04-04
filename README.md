@@ -2,11 +2,15 @@
 
 Esta é a parte Front End do projeto desenvolvido para o teste técnico da MyPharma.
 
+Link do deploy:
+
+https://my-pharma.vercel.app/
+
 Para clonar o repositório digite o seguinte comando em um terminal git:
 
 git clone git@github.com:viniciusgrp/MyPharma-FrontEnd.git
 
-Para o funcionamento desse projeto se faz necessária a execução do back end (API), para isso clone o seguinte repositório e siga os passos do README presente nele:
+Para o funcionamento desse projeto localmente se faz necessária a execução do back end (API), para isso clone o seguinte repositório e siga os passos do README presente nele:
 
 https://github.com/viniciusgrp/MyPharma-BackEnd
 
@@ -19,7 +23,7 @@ Após seguir TODOS os passos do README do back end:
 1 - Abra o terminal e instale as dependencias, rode o seguinte comando:
 yarn install
 
-2 - Vá em src/services/api.js e comente a linha 5 e descomente a 4, se necessário ajuste a porta para a qual a API está rodando localmente.
+2 - Vá em src/services/api.js e comente a linha 5 e descomente a 4, se necessário ajuste a URL para a qual a API está rodando localmente.
 
 3 - Execute o servidor rodando o seguinte comando no terminal:
 yarn dev

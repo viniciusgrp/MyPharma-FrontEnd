@@ -51,7 +51,7 @@ export const JobProvider = ({ children }) => {
           limit,
           skip,
           sort,
-          name: `/${name}/i`,
+          name: `/${name.toUpperCase()}/i`,
         },
       });
       setProducts(data);

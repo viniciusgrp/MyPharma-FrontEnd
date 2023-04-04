@@ -31,7 +31,7 @@ export const Product = () => {
   return (
     <ProductStyle>
       {showCart && <Cart />}
-      <Header />
+      <Header origin={"productPage"} />
       <IoIosArrowBack onClick={() => navigate("/")} className="backButton" />
       <SingleProduct product={product} />
       <Footer />

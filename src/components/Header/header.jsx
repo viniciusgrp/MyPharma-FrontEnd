@@ -6,9 +6,11 @@ import { ProductsContext } from "../../context/productsContext";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 
-export const Header = () => {
+export const Header = ({origin}) => {
   const { cartProducts, setShowCart, setNameSearch, resetFilters } =
-    useContext(ProductsContext);
+  useContext(ProductsContext);
+  
+  const navigate = useNavigate();
 
   const [productsInCart, setProductsInCart] = useState(0);
   const [input, setInput] = useState("");
@@ -16,6 +18,9 @@ export const Header = () => {
   const handleSearch = () => {
     setNameSearch(input);
     setInput("");
+    if (origin === 'productPage') {
+      navigate("/")
+    }
   };
 
   useEffect(() => {
@@ -25,7 +30,6 @@ export const Header = () => {
     }
   }, [cartProducts]);
 
-  const navigate = useNavigate();
 
   return (
     <HeaderStyle>
@@ -49,7 +53,7 @@ export const Header = () => {
             type="text"
             placeholder="Busque por um produto"
             value={input}
-            onChange={(e) => setInput(e.target.value.toUpperCase())}
+            onChange={(e) => setInput(e.target.value)}
           />
           <button type="submit">
             <AiOutlineSearch />
