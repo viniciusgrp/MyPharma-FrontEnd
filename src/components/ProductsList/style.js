@@ -93,6 +93,11 @@ export const ProductListStyle = styled.ul`
           font-size: 18px;
         }
 
+        .productName {
+          height: 2rem;
+          text-align: center;
+        }
+
         span {
           font-weight: 600;
           font-size: 20px;

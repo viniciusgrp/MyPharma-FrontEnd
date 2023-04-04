@@ -62,7 +62,9 @@ export const ProductsList = () => {
                 <img src={product.img} alt="" />
               </div>
               <div className="infosProduct">
+                <div className="productName">
                 <p>{product.name}</p>
+                </div>
                 {product.discont ? (
                   <>
                     <p className="oldPrice">
