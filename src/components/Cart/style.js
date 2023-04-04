@@ -103,6 +103,10 @@ export const CartStyle = styled.div`
               cursor: pointer;
             }
           }
+
+          button {
+            cursor: pointer;
+          }
         }
       }
     }
