@@ -7,7 +7,8 @@ import "react-loading-skeleton/dist/skeleton.css";
 import { ProductsContext } from "../../context/productsContext";
 
 export const Categories = () => {
-  const { categories, setSelectedCategory, setPage } = useContext(ProductsContext);
+  const { categories, setSelectedCategory, setPage, setNameSearch } =
+    useContext(ProductsContext);
 
   return (
     <CategoriesStyle>
@@ -15,10 +16,13 @@ export const Categories = () => {
       <div className="categoriesList">
         {categories.length &&
           categories.map((category) => (
-            <li onClick={() => {
-                setSelectedCategory(category.name)
-                setPage(0)
-            }}>
+            <li
+              onClick={() => {
+                setSelectedCategory(category.name);
+                setNameSearch("");
+                setPage(0);
+              }}
+            >
               <div className="categoryImg">
                 {category.img ? (
                   <img src={category.img} />

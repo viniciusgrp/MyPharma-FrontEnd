@@ -3,7 +3,7 @@ import { ProductStyle } from "./style";
 import { ProductsContext } from "../../context/productsContext";
 
 export const SingleProduct = ({ product }) => {
-  const {cartProducts, setCartProducts} = useContext(ProductsContext)
+  const { cartProducts, setCartProducts } = useContext(ProductsContext);
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
@@ -13,16 +13,18 @@ export const SingleProduct = ({ product }) => {
   }, [quantity]);
 
   const handleBuyProduct = () => {
-    const productIndex = cartProducts.findIndex((elem) => elem._id === product._id)
-    const copy = cartProducts
+    const productIndex = cartProducts.findIndex(
+      (elem) => elem._id === product._id
+    );
+    const copy = cartProducts;
     if (productIndex !== -1) {
-      copy[productIndex].quantity += quantity
+      copy[productIndex].quantity += quantity;
     } else {
-      copy.push({...product, quantity: quantity})
+      copy.push({ ...product, quantity: quantity });
     }
-    setCartProducts([...copy])
-    localStorage.setItem("@CART", JSON.stringify(copy))
-  }
+    setCartProducts([...copy]);
+    localStorage.setItem("@CART", JSON.stringify(copy));
+  };
 
   return (
     <ProductStyle>
@@ -35,29 +37,44 @@ export const SingleProduct = ({ product }) => {
             <h1>{product.name}</h1>
             {product.discont ? (
               <>
-                <span>{product.price.toLocaleString("pt-br", {
+                <span>
+                  {product.price.toLocaleString("pt-br", {
                     style: "currency",
                     currency: "BRL",
-                  })}</span>
-                <p>{product.discontPrice.toLocaleString("pt-br", {
+                  })}
+                </span>
+                <p>
+                  {product.discontPrice.toLocaleString("pt-br", {
                     style: "currency",
                     currency: "BRL",
-                  })}</p>
+                  })}
+                </p>
               </>
             ) : (
-              <p>{product.price.toLocaleString("pt-br", {
-                style: "currency",
-                currency: "BRL",
-              })}</p>
+              <p>
+                {product.price.toLocaleString("pt-br", {
+                  style: "currency",
+                  currency: "BRL",
+                })}
+              </p>
             )}
-            <p className="quantityInStock">{product.quantityStock} disponíveis</p>
+            <p className="quantityInStock">
+              {product.quantityStock} disponíveis
+            </p>
             <div className="buyProduct">
               <div className="selectQuantity">
-                <button disabled={quantity == 1} onClick={() => setQuantity(quantity - 1)}>-</button>
+                <button
+                  disabled={quantity == 1}
+                  onClick={() => setQuantity(quantity - 1)}
+                >
+                  -
+                </button>
                 <p>{quantity}</p>
                 <button onClick={() => setQuantity(quantity + 1)}>+</button>
               </div>
-              <button className="buyButton" onClick={() => handleBuyProduct()}>Comprar</button>
+              <button className="buyButton" onClick={() => handleBuyProduct()}>
+                Comprar
+              </button>
             </div>
           </div>
         </>

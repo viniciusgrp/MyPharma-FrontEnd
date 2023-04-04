@@ -133,9 +133,9 @@ export const ProductListStyle = styled.ul`
       justify-content: center;
     }
     .upperUlProducts {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
       .selectsProducts {
         gap: 2rem;
         max-width: 30%;

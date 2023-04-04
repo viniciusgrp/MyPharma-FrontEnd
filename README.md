@@ -25,9 +25,9 @@ yarn install
 yarn dev
 
 4 - Se tudo estiver certo aparecerá algo similar no terminal:
-➜  Local:   http://127.0.0.1:5173/
-➜  Network: use --host to expose
-➜  press h to show help
+➜ Local: http://127.0.0.1:5173/
+➜ Network: use --host to expose
+➜ press h to show help
 
 Segure CTRL e clique com o botão esquerdo do mouse em http://127.0.0.1:5173/ (ou similar)
 
@@ -47,7 +47,7 @@ Carrinho armazenado no localstorage, assim mesmo que o usuario saia / feche o si
 
 Observações extras:
 
-Design não é meu ponto forte, considero que ficou um projeto de design simples pois foquei em deixar funcional. 
+Design não é meu ponto forte, considero que ficou um projeto de design simples pois foquei em deixar funcional.
 
 Minha preferência é de seguir um design feito por um profissional, gosto bastante da ferramenta Figma.
 

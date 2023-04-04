@@ -19,7 +19,7 @@ export const HeaderStyle = styled.header`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
     gap: 1rem;
 
     form {
@@ -35,32 +35,32 @@ export const HeaderStyle = styled.header`
         border: none;
       }
 
-        button {
-            width: 15%;
-            height: 100%;
-            cursor: pointer;
-            border: none;
-            border-radius: 0px 15px 15px 0;
+      button {
+        width: 15%;
+        height: 100%;
+        cursor: pointer;
+        border: none;
+        border-radius: 0px 15px 15px 0;
       }
     }
-    
+
     .basketButton {
       display: block;
       font-size: 34px;
       color: white;
     }
     .cartHeader {
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
 
-        p {
-          color: white;
-          font-size: 22px;
-        }
+      p {
+        color: white;
+        font-size: 22px;
       }
+    }
   }
 
   @media screen and (min-width: 768px) {
@@ -77,8 +77,6 @@ export const HeaderStyle = styled.header`
       input {
         width: 400px;
       }
-
-      
     }
   }
 `;

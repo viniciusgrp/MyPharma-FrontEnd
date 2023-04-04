@@ -7,14 +7,16 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
-  const { cartProducts, setShowCart, setNameSearch, resetFilters } = useContext(ProductsContext);
+  const { cartProducts, setShowCart, setNameSearch, resetFilters } =
+    useContext(ProductsContext);
 
   const [productsInCart, setProductsInCart] = useState(0);
-  const [input, setInput] = useState("")
+  const [input, setInput] = useState("");
 
   const handleSearch = () => {
-    setNameSearch(input)
-  }
+    setNameSearch(input);
+    setInput("");
+  };
 
   useEffect(() => {
     if (cartProducts) {
@@ -23,22 +25,30 @@ export const Header = () => {
     }
   }, [cartProducts]);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <HeaderStyle>
-      <img onClick={() => {
-        resetFilters()
-        navigate("/")
-      }} className="logoHeader" src={Logo} alt="Logo do mercado" />
+      <img
+        onClick={() => {
+          resetFilters();
+          navigate("/");
+        }}
+        className="logoHeader"
+        src={Logo}
+        alt="Logo do mercado"
+      />
       <div className="rightHeader">
-        <form onSubmit={(e) => {
-            e.preventDefault()
-            handleSearch()
-        }}>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSearch();
+          }}
+        >
           <input
             type="text"
             placeholder="Busque por um produto"
+            value={input}
             onChange={(e) => setInput(e.target.value.toUpperCase())}
           />
           <button type="submit">
@@ -46,10 +56,7 @@ export const Header = () => {
           </button>
         </form>
         <div onClick={() => setShowCart(true)} className="cartHeader">
-          <BsBasket
-            
-            className="basketButton"
-          />
+          <BsBasket className="basketButton" />
           {cartProducts.length > 0 && <p>{productsInCart}</p>}
         </div>
       </div>

@@ -5,7 +5,6 @@ export const CartStyle = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  /* max-width:100vw; */
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 10;
@@ -127,18 +126,18 @@ export const CartStyle = styled.div`
     justify-content: space-between;
 
     p {
-        font-weight: 600;
-        font-size: 22px;
+      font-weight: 600;
+      font-size: 22px;
     }
   }
 
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     .cart {
-        width: 40%;
-        max-width: 500px;
-        position: absolute;
-        top: 0;
-        right: 0;
+      width: 40%;
+      max-width: 500px;
+      position: absolute;
+      top: 0;
+      right: 0;
     }
   }
 `;
