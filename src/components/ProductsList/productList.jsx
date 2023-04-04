@@ -87,7 +87,8 @@ export const ProductsList = () => {
                   </p>
                 )}
                 <button
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.stopPropagation();
                     const productIndex = cartProducts.findIndex(
                       (elem) => elem._id === product._id
                     );
