@@ -18,7 +18,7 @@ export const ProductsList = () => {
   return (
     <ProductListStyle>
       <div className="upperUlProducts">
-        <h3>{selectedCategory?.toUpperCase() || "Produtos"}</h3>
+        <h3>{selectedCategory?.toUpperCase() || "PRODUTOS"}</h3>
         <div className="selectsProducts">
           <select
             onChange={(e) => setItemsPerPage(+e.target.value)}
