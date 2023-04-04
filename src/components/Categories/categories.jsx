@@ -14,6 +14,21 @@ export const Categories = () => {
     <CategoriesStyle>
       <h3>Categorias</h3>
       <div className="categoriesList">
+        <li
+          onClick={() => {
+            setSelectedCategory("");
+            setNameSearch("");
+            setPage(0);
+          }}
+        >
+          <div className="categoryImg">
+            <img
+              src="https://img.freepik.com/vetores-gratis/os-vegetais-que-compram-o-conceito-realistico-com-carrinho-de-compras-e-bens-vector-a-ilustracao_1284-16246.jpg?w=2000"
+              alt=""
+            />
+          </div>
+          <p>TODOS</p>
+        </li>
         {categories.length &&
           categories.map((category) => (
             <li
