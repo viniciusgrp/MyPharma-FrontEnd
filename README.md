@@ -1,9 +1,6 @@
-#Olá!
-
-Esta é a parte Front End do projeto desenvolvido para o teste técnico da MyPharma.
+Obs: Por conta do deploy da API ser o grátis, ao ficar um tempo sem requisições, a mesma é pausada, caso aconteça basta atualizar a página algumas vezes até que os produtos e categorias apareçam.
 
 Link do deploy:
-
 https://my-pharma.vercel.app/
 
 Para clonar o repositório digite o seguinte comando em um terminal git:
