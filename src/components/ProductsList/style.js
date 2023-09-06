@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const ProductListStyle = styled.ul`
   padding-top: 2rem;
   h3 {
+    margin: 0 auto 15px auto;
     padding-left: 1rem;
     font-size: 22px;
     font-weight: 500;
@@ -12,15 +13,17 @@ export const ProductListStyle = styled.ul`
     padding-right: 5%;
     display: flex;
     justify-content: space-between;
-    width: 70%;
+    width: 100%;
+    flex-direction: column;
 
     .selectsProducts {
-      width: 50%;
+      width: 100%;
       display: flex;
-      justify-content: space-between;
+      gap: 16px;
+      justify-content: center;
     }
     select {
-      width: 100px;
+      width: 130px;
       padding: 5px 10px;
       border-radius: 8px;
     }
@@ -125,22 +128,26 @@ export const ProductListStyle = styled.ul`
     max-width: 1500px;
     margin: 0 auto;
     h3 {
+        margin: 0;
       padding-left: 5%;
     }
     .liProducts {
       li {
         width: 16%;
+        min-width: 180px;
       }
     }
     .liProducts {
+    padding: 3%;
       overflow: none;
       flex-wrap: wrap;
       justify-content: center;
     }
     .upperUlProducts {
-      width: 100%;
+      width: 95%;
       display: flex;
       justify-content: space-between;
+      flex-direction: row;
       .selectsProducts {
         gap: 2rem;
         max-width: 30%;
